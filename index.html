@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dantas Imports</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #000; }
+    header { background-color: #000; color: #fff; padding: 20px; text-align: center; }
+    nav { text-align: center; background-color: #222; padding: 10px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .product { background-color: #f9f9f9; padding: 15px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); text-align: center; }
+    .product img { max-width: 100%; border-radius: 10px; }
+    .btn-whatsapp { background-color: #000; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+    footer { background-color: #222; color: #fff; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dantas Imports</h1>
+    <p>Eletrônicos modernos com os melhores preços</p>
+  </header>
+  <nav>
+    <a href="#">Início</a><a href="#">Produtos</a><a href="#">Contato</a>
+  </nav>
+  <div class="container"></div>
+  <footer>
+    <p>&copy; 2025 Dantas Imports - Todos os direitos reservados</p>
+    <p>Atendimento via WhatsApp: (62) 98148-0857</p>
+  </footer>
+  <script>
+    const produtos = [
+      { nome: "Smartwatch X9", preco: "199,90", descricao: "Bluetooth, monitor cardíaco", imagem: "https://via.placeholder.com/300x200?text=Smartwatch+X9" },
+      { nome: "Fone Bluetooth TWS", preco: "89,90", descricao: "Case recarregável, estéreo", imagem: "https://via.placeholder.com/300x200?text=Fone+Bluetooth" },
+      { nome: "Carregador Turbo 3.0", preco: "59,90", descricao: "Com cabo USB-C", imagem: "https://via.placeholder.com/300x200?text=Carregador+Turbo" },
+      { nome: "Caixa de Som Bluetooth", preco: "149,90", descricao: "Portátil e potente", imagem: "https://via.placeholder.com/300x200?text=Caixa+de+Som" }
+    ];
+    const container = document.querySelector('.container');
+    produtos.forEach(prod => {
+      container.innerHTML += `
+        <div class="product">
+          <img src="${prod.imagem}" alt="${prod.nome}">
+          <h2>${prod.nome}</h2>
+          <p><strong>R$ ${prod.preco}</strong></p>
+          <p>${prod.descricao}</p>
+          <a class="btn-whatsapp" href="https://wa.me/5562981480857?text=Olá,%20quero%20comprar%20${encodeURIComponent(prod.nome)}!" target="_blank">Comprar pelo WhatsApp</a>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
